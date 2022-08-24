@@ -29,7 +29,7 @@
   "main": "./lib/opencv4nodejs.js",
   "typings": "./lib/index.d.ts",
   "scripts": {
-    "install": "node ./install/install.js",
+    "install": "if [ -x $OPENCV4NODEJS_DISABLE_AUTOBUILD ]; then node ./install/install.js; fi",
     "configure": "node-gyp configure",
     "build": "node-gyp configure build --jobs max",
     "rebuild": "node-gyp rebuild --jobs max",
